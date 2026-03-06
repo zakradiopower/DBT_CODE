@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: EMPLOYEE
+    description: "employee_transforming"
+    columns:
+      - name: EMPID
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["1", "2", "3", "4", "5"]
+                config:
+                  severity: warn
+      - name: SALARY
+        data_tests:
+          - salary_check
+
+sources:
+  - name: EMPLOYEE
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: EMPLOYEE_RAW
