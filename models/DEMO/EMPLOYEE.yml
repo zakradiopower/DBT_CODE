@@ -16,6 +16,10 @@ models:
       - name: SALARY
         data_tests:
           - salary_check
+  - name: CUSTOMER
+    description: 'customer_table'   
+  - name: CUSTOMER_VIEW
+    description: 'customer_table'       
 
 sources:
   - name: EMPLOYEE
@@ -23,3 +27,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: EMPLOYEE_RAW
+  - name: CUSTOMER
+    database: DBT_DB
+    schema: PUBLIC
+    tables: 
+       - name:  CUSTOMER_SRC    
