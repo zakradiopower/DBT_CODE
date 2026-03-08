@@ -17,10 +17,11 @@ models:
         data_tests:
           - salary_check
   - name: CUSTOMER
-    description: 'customer_table'   
+    description: "customer_table"
   - name: CUSTOMER_VIEW
-    description: 'customer_table'       
-
+    description: "customer_table"
+  - name: SALES
+    description: "sales_incremental"
 sources:
   - name: EMPLOYEE
     database: DBT_DB
@@ -30,5 +31,10 @@ sources:
   - name: CUSTOMER
     database: DBT_DB
     schema: PUBLIC
-    tables: 
-       - name:  CUSTOMER_SRC    
+    tables:
+      - name: CUSTOMER_SRC
+  - name: SALES
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SALES_SRC
