@@ -22,6 +22,11 @@ models:
     description: "customer_table"
   - name: SALES
     description: "sales_incremental"
+  - name: PRODUCT
+    description: 'product_table'
+
+
+    
 sources:
   - name: EMPLOYEE
     database: DBT_DB
@@ -38,3 +43,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: SALES_SRC
+  - name: PRODUCT
+    database: DBT_DB
+    schema: PUBLIC
+    tables: 
+      - name: PRODUCT_SRC
