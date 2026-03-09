@@ -26,6 +26,10 @@ models:
     description: 'product_table'
   - name: PURCHASE
     description: 'purchase_merged_table'
+  - name: CLEAN_ORDERS
+    description: 'EPHEMERAL_MODEL_order_table'
+  - name: FINAL_ORDERS
+    description: 'order_table_model' 
 
 
     
@@ -55,3 +59,9 @@ sources:
     schema: PUBLIC
     tables:
        - name: PURCHASE_SRC
+  - name: CLEAN_ORDERS
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+       - name: BASE_ORDERS
+  
