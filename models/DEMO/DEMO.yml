@@ -23,16 +23,14 @@ models:
   - name: SALES
     description: "sales_incremental"
   - name: PRODUCT
-    description: 'product_table'
+    description: "product_table"
   - name: PURCHASE
-    description: 'purchase_merged_table'
+    description: "purchase_merged_table"
   - name: CLEAN_ORDERS
-    description: 'EPHEMERAL_MODEL_order_table'
+    description: "EPHEMERAL_MODEL_order_table"
   - name: FINAL_ORDERS
-    description: 'order_table_model' 
+    description: "order_table_model"
 
-
-    
 sources:
   - name: EMPLOYEE
     database: DBT_DB
@@ -52,16 +50,20 @@ sources:
   - name: PRODUCT
     database: DBT_DB
     schema: PUBLIC
-    tables: 
+    tables:
       - name: PRODUCT_SRC
   - name: PURCHASE
     database: DBT_DB
     schema: PUBLIC
     tables:
-       - name: PURCHASE_SRC
+      - name: PURCHASE_SRC
   - name: CLEAN_ORDERS
     database: DBT_DB
     schema: PUBLIC
     tables:
-       - name: BASE_ORDERS
-  
+      - name: BASE_ORDERS
+  - name: patient_snapshot
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
