@@ -32,7 +32,10 @@ models:
     description: "order_table_model"
   - name: SESSION 
     description: 'model_session'
-
+  - name: concat_name
+    description: 'model_name'
+  - name: concat_address
+    description: 'model_address'
 sources:
   - name: EMPLOYEE
     database: DBT_DB
