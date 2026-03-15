@@ -1,0 +1,11 @@
+version: 2
+
+
+models:
+    - name: dim_customers
+      description: 'jaffle_shop_customers_orders_table'
+    - name: fct_orders
+      description: 'jaffle_shop_payment_table'
+
+ 
+    

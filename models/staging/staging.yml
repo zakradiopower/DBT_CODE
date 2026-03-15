@@ -1,0 +1,27 @@
+version: 2
+
+models:
+    - name: stg_jaffle_shop_customers
+      description: 'jaffle_shop_customer_view'
+    - name: stg_jaffle_shop_orders
+      description: 'jaffle_shop_orders_view'
+    - name: stg_stripe_payments
+      description: 'payments_view'  
+       
+
+sources:
+  - name: customers
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+  - name: orders
+    database: raw
+    schema: jaffle_shop
+    tables:
+        - name: orders
+  - name: payment
+    database: raw
+    schema: stripe
+    tables:
+       - name: payment
