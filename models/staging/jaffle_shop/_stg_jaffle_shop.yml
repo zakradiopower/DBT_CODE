@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop_customers
+    description: "customer_dim_table"
+    columns:
+      - name: customer_id
+        description: primary_key 
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_jaffle_shop_orders
+    description: "orders_fact_table"
+    columns:
+      - name: order_id
+        description: primary_key
+        data_tests:
+          - unique
+          - not_null
+      - name: status
+        description: "{{doc('order_status')}}"
+        data_tests:
+          - accepted_values: 
+              arguments:
+                values:
+                  - placed
+                  - shipped
+                  - completed
+                  - return_pending
+                  - returned
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_jaffle_shop_customers')
+                field: customer_id
